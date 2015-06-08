@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.1.5'
+
 gem 'rails', '4.1.4'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
@@ -9,17 +11,18 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'faker'
-gem 'haml-rails'
 gem 'therubyracer'
 gem 'less-rails-bootstrap'
-gem 'skylight'
-gem 'rails_12factor'
+gem "skylight"
+
+group :production do
+ gem 'rails_12factor'
+end
 
 group :development do
-  gem 'spring'
+ gem 'spring'
 end
 
 group :development, :test do
-  gem 'capybara'
-  gem 'pry', :require => 'pry'
+ gem 'capybara'
 end
